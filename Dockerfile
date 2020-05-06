@@ -1,7 +1,7 @@
 FROM centos
 MAINTAINER kusari-k
 
-EXPOSE 1194 1701
+EXPOSE 1194 1701 992
 EXPOSE 500/udp 4500/udp
 
 ARG version="4.34-9745"

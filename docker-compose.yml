@@ -8,6 +8,7 @@ services:
     container_name: VPN
     restart: always
     ports:
+      - "992:992"
       - "1194:1194"
       - "1701:1701"
       - "500:500/udp"
