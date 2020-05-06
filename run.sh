@@ -4,6 +4,6 @@
 rsyslogd
 
 #start VPN
-/usr/local/openvpn_as/scripts/openvpnas --logfile=/var/log/openvpnas.log --pidfile=/run/openvpnas.pid
+/usr/local/vpnserver/vpnserver start
 
 tail -f /dev/null

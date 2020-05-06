@@ -10,8 +10,12 @@ services:
     container_name: VPN
     restart: always
     ports:
-      - "943:943"
+      - "443:443"
+      - "1701:1701"
+      - "5555:5555"
+      - "500:500/udp"
       - "1194:1194/udp"
+      - "4500:4500/udp"
     volumes:
       - /var/log/docker_log/vpn:/var/log
     cap_add:
