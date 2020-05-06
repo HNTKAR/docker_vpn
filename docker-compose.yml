@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  VPN:
+    build:
+      context: .
+      args:
+        root_password: password
+    image: vpn
+    container_name: VPN
+    restart: always
+    ports:
+      - "443:443"
+      - "1194:1194/udp"
+    volumes:
+      - /var/log/docker_log/vpn:/var/log
+
+networks:
+  default:
+    external:
+      name: default_bridge
