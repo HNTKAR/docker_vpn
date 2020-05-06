@@ -14,6 +14,8 @@ services:
       - "1194:1194/udp"
     volumes:
       - /var/log/docker_log/vpn:/var/log
+    cap_add:
+      - NET_ADMIN
 
 networks:
   default:
