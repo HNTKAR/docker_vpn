@@ -1,7 +1,8 @@
 FROM centos
 MAINTAINER kusari-k
 
-EXPOSE 3306
+EXPOSE 443
+EXPOSE 1194/udp
 ARG root_password="password"
 
 RUN yum -y install https://as-repository.openvpn.net/as-repo-centos8.rpm
