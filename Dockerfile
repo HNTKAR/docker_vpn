@@ -1,7 +1,7 @@
 FROM centos
 MAINTAINER kusari-k
 
-EXPOSE 443
+EXPOSE 943
 EXPOSE 1194/udp
 ARG root_password="password"
 
@@ -13,9 +13,12 @@ RUN dnf update -y && \
 
 RUN echo $root_password|passwd --stdin openvpn
 
-#/etc/rsyslog.conf
+#syslog setting
 RUN sed -i -e "/imjournal/ s/^/#/" \
 	-e "s/off/on/" /etc/rsyslog.conf
+
+#PAM setting
+RUN sed -i -e "/pam_nologin/ s/^/#/" /etc/pam.d/openvpnas
 
 COPY run.sh  /usr/local/bin/
 RUN  chmod 755 /usr/local/bin/run.sh
