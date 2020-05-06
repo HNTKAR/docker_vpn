@@ -1,10 +1,9 @@
 FROM centos
 MAINTAINER kusari-k
 
-EXPOSE 443 1701 5555
-EXPOSE 500/udp 1194/udp 4500/udp
+EXPOSE 1194 1701
+EXPOSE 500/udp 4500/udp
 
-ARG root_password="password"
 ARG version="4.34-9745"
 ARG version_date="2020.04.05"
 

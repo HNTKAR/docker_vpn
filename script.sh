@@ -30,9 +30,6 @@ sed -e "s/^##.*//g"  setting.txt | \
 	-e "s/-----.*//g" | \
 	sed -e /^$/d>user.log
 
-#set docker-compose.yml
-sed -i -e "/root_password/ s/:.*/:\ $(grep root_password system.log | sed s/.*://)/" docker-compose.yml
-
 read -p "do you want to up this container ? (y/n):" yn
 if [ ${yn,,} = "y" ]; then
 	docker-compose up --build -d
